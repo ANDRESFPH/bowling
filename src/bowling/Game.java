@@ -33,8 +33,8 @@ public class Game {
 		// FINAL ROUND
 		readEnter();
 		Round round = rounds[ROUNDS - 1];
-		int thirdToss = FinalRound(round);
-		int total = round.getFirstToss() + round.getSecondToss() + thirdToss;
+		FinalRound(round);
+		int total = round.getFirstToss() + round.getSecondToss() + round.getThirdToss();
 		round.setTotalPoints(total);
 		calculateAccumulatedPoints(rounds, ROUNDS - 1);
 		printPoints(rounds);
@@ -68,9 +68,7 @@ public class Game {
 				int acumulated = rounds[j].getAcumulatedPoints();
 				rounds[j].setAcumulatedPoints(acumulated + currentRound.getFirstToss() + currentRound.getSecondToss());
 			}
-		}else {
-			
-			
+		} else {
 			int accumulatedPoints = previousRound.getAcumulatedPoints();
 			if(previousRound.isStrike()){
 				previousRound.setAcumulatedPoints(accumulatedPoints + currentRound.getFirstToss() + currentRound.getSecondToss());
@@ -121,7 +119,7 @@ public class Game {
 	
 	
 	
-	public static int FinalRound(Round round){
+	public static void FinalRound(Round round){
 		int pins = PINS_NUMBER;
 		int firstToss = toss(pins);
 		
@@ -146,8 +144,8 @@ public class Game {
 			
 			thirdToss = toss(pins);
 			System.out.println("entro al toss tres " + thirdToss);
+			round.setThirdToss(thirdToss);
 		}
-		return thirdToss;
 	}
 	
 	public static void readEnter(){

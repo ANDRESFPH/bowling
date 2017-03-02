@@ -3,6 +3,7 @@ package bowling;
 public class Round {
 	private int firstToss;
 	private int secondToss;
+	private int thirdToss;
 	private int totalPoints;
 	private int AcumulatedPoints;
 	private boolean strike;
@@ -19,6 +20,12 @@ public class Round {
 	}
 	public void setSecondToss(int secondToss) {
 		this.secondToss = secondToss;
+	}
+	public int getThirdToss() {
+		return thirdToss;
+	}
+	public void setThirdToss(int thirdToss) {
+		this.thirdToss = thirdToss;
 	}
 	public int getTotalPoints() {
 		return totalPoints;
