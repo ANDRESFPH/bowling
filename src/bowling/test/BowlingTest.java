@@ -1,6 +1,13 @@
 package bowling.test;
 
-public class BowlingTest {
-	
+import org.junit.Test;
 
+public class BowlingTest {
+
+	
+	
+	@Test
+	public void TestAcumulatedPoints(){
+		
+	}
 }
